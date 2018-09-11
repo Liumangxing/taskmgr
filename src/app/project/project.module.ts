@@ -6,6 +6,7 @@ import { InviteComponent } from './invite/invite.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProjectRoutingModule } from './project-routing.module';
 
+
 @NgModule({
   imports: [
     SharedModule,
@@ -15,7 +16,7 @@ import { ProjectRoutingModule } from './project-routing.module';
     ProjectListComponent, 
     ProjectItemComponent, 
     NewProjectComponent, 
-    InviteComponent
+    InviteComponent, 
   ],
   entryComponents:[
     NewProjectComponent, 

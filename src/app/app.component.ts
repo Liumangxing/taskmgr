@@ -17,7 +17,7 @@ export class AppComponent {
 
   switchTheme(dark) {
     this.darkTheme = dark;
-    this.oc.getContainerElement().className = dark ? 'myapp-dark-theme' : null;
+    this.oc.getContainerElement().classList.add(dark ? 'myapp-dark-theme' : null);
 
   }
 }
