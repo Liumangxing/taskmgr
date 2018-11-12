@@ -8,14 +8,17 @@ import { loadSvgResources } from '../utils/svg.utils';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
+import 'hammerjs';
+import { AppRoutingModule } from '../app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   imports: [
     HttpClientModule,
     SharedModule,
+    AppRoutingModule,
     BrowserAnimationsModule
   ],
   declarations: [
@@ -26,7 +29,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
   exports:[
     HeaderComponent, 
     FooterComponent, 
-    SidebarComponent
+    SidebarComponent,
+    AppRoutingModule
   ]
 })
 export class CoreModule {

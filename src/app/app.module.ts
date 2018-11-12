@@ -1,12 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { MatSidenavModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
-import { AppRoutingModule } from './app-routing.module';
 import { LoginModule } from './login/login.module';
 import { ProjectModule } from './project/project.module';
 import { TaskModule } from './task/task.module';
+import { SharedModule } from './shared/shared.module';
+
 
 
 
@@ -19,11 +19,10 @@ import { TaskModule } from './task/task.module';
   imports: [
     BrowserModule,
     CoreModule,
-    MatSidenavModule,
-    AppRoutingModule,
     LoginModule,
     ProjectModule,
-    TaskModule
+    TaskModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

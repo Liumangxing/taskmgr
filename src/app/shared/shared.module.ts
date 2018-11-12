@@ -17,7 +17,8 @@ import {
   MatRadioModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSidenavModule
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 
@@ -39,7 +40,8 @@ const modules = [
   MatRadioModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSidenavModule
 ]
 
 @NgModule({
