@@ -11,14 +11,21 @@
     display: flex;
     flex-direction: row;
     flex-wrap:nowrap;
-    overflow-x: scroll;
+    // overflow-x: scroll;
 }
 
 .list-container{
     flex:0 0 360px;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     overflow-x: hidden;
     margin:12px 12px 12px 0px;
     border:1px solid rgba($color:#CCC,$alpha:0.5);
     border-top:none;
 }
+
+.drag-enter{
+    background-color:dimgray;
+}
+
+
+

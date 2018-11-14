@@ -21,6 +21,7 @@ import {
   MatSidenavModule
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { DirectiveModule } from '../directive/directive.module';
 
 const modules = [
   CommonModule,
@@ -41,7 +42,8 @@ const modules = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatSelectModule,
-  MatSidenavModule
+  MatSidenavModule,
+  DirectiveModule
 ]
 
 @NgModule({

@@ -1,5 +1,5 @@
 import { NgModule } from "@angular/core";
-import { RouterModule,Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from "./app.component";
 
 
@@ -8,17 +8,17 @@ const routes: Routes = [
     {
         path: '',
         redirectTo: '/login',
-        pathMatch:'full'
+        pathMatch: 'full'
     },
     {
-        path:'projects',
-        redirectTo:'/projects',
-        pathMatch:'full'
+        path: 'projects',
+        redirectTo: '/projects',
+        pathMatch: 'full'
     },
     {
-        path:'tasklists',
-        redirectTo:'/tasklists',
-        pathMatch:'full'
+        path: 'tasklists',
+        redirectTo: '/tasklists',
+        pathMatch: 'full'
     }
 ]
 
@@ -27,6 +27,6 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 
-export class AppRoutingModule{
-    
+export class AppRoutingModule {
+
 }
