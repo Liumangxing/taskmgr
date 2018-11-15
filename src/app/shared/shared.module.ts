@@ -22,6 +22,7 @@ import {
 } from '@angular/material';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
 import { DirectiveModule } from '../directive/directive.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const modules = [
   CommonModule,
@@ -43,7 +44,9 @@ const modules = [
   MatNativeDateModule,
   MatSelectModule,
   MatSidenavModule,
-  DirectiveModule
+  DirectiveModule,
+  FormsModule,
+  ReactiveFormsModule
 ]
 
 @NgModule({

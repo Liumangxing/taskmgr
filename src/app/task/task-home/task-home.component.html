@@ -10,6 +10,7 @@
   [dragTag]="'task-list'"
   [draggedClass]="'drag-start'"
   [dragData]="list"
+  [ngStyle]="{'order':list.order}"
   (dropped)="handleMove($event,list)">
 
     <app-task-header 
@@ -19,7 +20,7 @@
     (delList)="launchConfirmDialog()"
     (onEditList)="launchEditListDialog()">
     </app-task-header>
-
+    <app-quick-task (quickTask)="handleQuictTask($event)"></app-quick-task>
     <app-task-item 
     *ngFor="let task of list.tasks" 
     [item]="task"
