@@ -3,9 +3,9 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 
 
-export interface DragData{
- tag:string;
- data:any; 
+export interface DragData {
+  tag: string;
+  data: any;
 }
 
 @Injectable({
@@ -17,15 +17,15 @@ export class DragDropService {
 
   constructor() { }
 
-  setDragData(data:DragData){
+  setDragData(data: DragData) {
     this._dragData.next(data);
   }
 
-  getDragData():Observable<DragData>{
+  getDragData(): Observable<DragData> {
     return this._dragData.asObservable();
   }
 
-  clearDragData(){
+  clearDragData() {
     this._dragData.next(null);
   }
 
