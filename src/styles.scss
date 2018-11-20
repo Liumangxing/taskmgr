@@ -2,31 +2,36 @@
 
 @import 'theme.scss';
 
-html,body,app-root,mat-sidenav-container,.side{
-    width:100%;
-    height:100%;
-    margin:0;
-    padding:0;
+html,
+body,
+app-root,
+mat-sidenav-container,
+.side {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
-.side{
-    display: flex;
-    flex-direction: column;
+.side {
+  display: flex;
+  flex-direction: column;
 }
 
-main{
-    flex:1;
-    overflow: auto;
+main {
+  flex: 1;
+  overflow: auto;
 }
 
-.fill-remaining-space{
-    flex:1 1 auto;
+.fill-remaining-space {
+  flex: 1 1 auto;
 }
 
-.full-width{
-    width:100%;
+.full-width {
+  width: 100%;
 }
 
-app-project-list,app-task-home{
-    position: static!important;
+app-project-list,
+app-task-home {
+  position: static !important;
 }

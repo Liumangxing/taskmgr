@@ -7,13 +7,6 @@ import { ProjectModule } from './project/project.module';
 import { TaskModule } from './task/task.module';
 import { SharedModule } from './shared/shared.module';
 
-
-
-
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
