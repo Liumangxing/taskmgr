@@ -10,6 +10,7 @@ import { MatIconRegistry } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
 
 import 'hammerjs';
+import '../utils/debug.util';
 import { AppRoutingModule } from '../app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
