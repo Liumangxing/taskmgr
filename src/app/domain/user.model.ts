@@ -1,7 +1,8 @@
-export class User{
-    id?:string;
-    email:string;
-    password:string;
-    name:string;
-    avatar:string;
+export class User {
+    id?: string;
+    email: string;
+    password: string;
+    name: string;
+    avatar: string;
+    projectIds: string[]
 }

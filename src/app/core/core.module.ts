@@ -10,9 +10,9 @@ import { MatIconRegistry } from '@angular/material';
 import { SharedModule } from '../shared/shared.module';
 
 import 'hammerjs';
-import '../utils/debug.util';
 import { AppRoutingModule } from '../app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -23,21 +23,21 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule
   ],
   declarations: [
-    HeaderComponent, 
-    FooterComponent, 
+    HeaderComponent,
+    FooterComponent,
     SidebarComponent
   ],
-  exports:[
-    HeaderComponent, 
-    FooterComponent, 
+  exports: [
+    HeaderComponent,
+    FooterComponent,
     SidebarComponent,
     AppRoutingModule
   ],
-  providers:[
+  providers: [
     {
-      provide:'BASE_CONFIG',
-      useValue:{
-        uri:'http://localhost:3000'
+      provide: 'BASE_CONFIG',
+      useValue: {
+        uri: 'http://localhost:3000'
       }
     }
   ]
@@ -45,14 +45,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class CoreModule {
 
   constructor(
-    @Optional() @SkipSelf() parent:CoreModule,
-    ir:MatIconRegistry,
-    ds:DomSanitizer
-  ){
-    if(parent){
+    @Optional() @SkipSelf() parent: CoreModule,
+    ir: MatIconRegistry,
+    ds: DomSanitizer
+  ) {
+    if (parent) {
       throw new Error('模块已经存在，不能再次加载！');
     }
-    loadSvgResources(ir,ds);
+    loadSvgResources(ir, ds);
   }
 
- }
+}
