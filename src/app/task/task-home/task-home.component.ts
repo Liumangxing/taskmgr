@@ -1,10 +1,12 @@
-import { Component, OnInit, HostBinding, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, HostBinding, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { NewTaskComponent } from '../new-task/new-task.component';
 import { CopyTaskComponent } from '../copy-task/copy-task.component';
 import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
 import { NewTaskListComponent } from '../new-task-list/new-task-list.component';
 import { slideToRight } from '../../anims/router.anim';
+import { TaskListService } from '../../services/task-list.service';
+import { TaskList } from '../../domain';
 
 @Component({
   selector: 'app-task-home',
@@ -17,77 +19,19 @@ export class TaskHomeComponent implements OnInit {
 
   @HostBinding('@routeAnim') state;
 
-  lists = [
-    {
-      id: 1,
-      name: '待办',
-      order:1,
-      tasks: [
-        {
-          id: 1,
-          desc: '任务一：去星巴克买杯咖啡',
-          completed: true,
-          priority: 3,
-          owner: {
-            id: 1,
-            name: '张三',
-            avatar: 'avatars:svg-11'
-          },
-          dueDate: new Date(),
-          reminder: new Date()
-        },
-        {
-          id: 2,
-          desc: '任务二：完成老板布置的 ppt 作业',
-          completed: false,
-          priority: 2,
-          owner: {
-            id: 1,
-            name: '李四',
-            avatar: 'avatars:svg-12'
-          },
-          dueDate: new Date(),
-        }
-      ]
-    },
-    {
-      id: 2,
-      name: '进行中',
-      order:2,
-      tasks: [
-        {
-          id: 1,
-          desc: '任务三：项目代码评审',
-          completed: false,
-          priority: 2,
-          owner: {
-            id: 1,
-            name: '王五',
-            avatar: 'avatars:svg-13'
-          },
-          dueDate: new Date(),
-        },
-        {
-          id: 2,
-          desc: '任务四：制定项目计划',
-          completed: false,
-          priority: 1,
-          owner: {
-            id: 1,
-            name: '李四',
-            avatar: 'avatars:svg-12'
-          },
-          dueDate: new Date(),
-        }
-      ]
-    },
-  ];
-
+  lists: TaskList[] = [];
   constructor(
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private service$: TaskListService,
+    private cd: ChangeDetectorRef
   ) { }
 
   ngOnInit() {
+    this.service$.getTaskLists().subscribe(res => {
+      this.lists = res;
+      console.log(res);
+      this.cd.markForCheck();
+    });
   }
 
   launchNewTaskDialog() {
@@ -118,7 +62,7 @@ export class TaskHomeComponent implements OnInit {
   }
 
   handleMove(srcData, list) {
-    switch (srcData.tag) { 
+    switch (srcData.tag) {
       case 'task-item':
         console.log('handling item');
         break;
@@ -134,7 +78,7 @@ export class TaskHomeComponent implements OnInit {
     }
   }
 
-  handleQuictTask(desc:string){
+  handleQuictTask(desc: string) {
     console.log(desc);
   }
 

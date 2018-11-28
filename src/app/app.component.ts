@@ -22,7 +22,6 @@ export class AppComponent {
     }else{
       this.oc.getContainerElement().classList.remove('myapp-dark-theme');
     }
-    
-
   }
+  
 }
